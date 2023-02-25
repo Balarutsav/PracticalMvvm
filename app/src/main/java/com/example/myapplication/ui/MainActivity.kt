@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.R
 import com.example.myapplication.data.Entities.OrderEntities
 import com.example.myapplication.data.Entities.OrderProductEntities
+import com.example.myapplication.data.Model.ListType
 import com.example.myapplication.data.Model.Result
 import com.example.myapplication.data.OrderData
 import com.example.myapplication.data.ProductsDataModel
@@ -108,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO) {
 
             val data = mainViewModel.getOrderList()
-            val orderData = arrayListOf<OrderData>()
+            val orderData = arrayListOf<ListType>()
             data.forEach {
                 val data = OrderData(it, mainViewModel.getAllProductsByOrder(it.orderId))
                 orderData.add(data)
