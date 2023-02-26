@@ -6,177 +6,279 @@
     <data>
 
     </data>
-
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="2dp">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
 
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/drag_item"
+            android:layout_margin="20dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="2dp">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvBusinessNameLbl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/lbl_business_name"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvBusinessName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvBusinessNameLbl"
-                app:layout_constraintTop_toTopOf="@id/tvBusinessNameLbl" />
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrierBusiness"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="tvBusinessName,tvBusinessNameLbl" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvPrimaryDetailsLbl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/lbl_primarydetails"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrierBusiness" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvPrimaryDetails"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:textSize="12sp"
-                app:layout_constraintStart_toEndOf="@id/tvPrimaryDetailsLbl"
-                app:layout_constraintTop_toTopOf="@id/tvPrimaryDetailsLbl" />
-
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrierPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="tvPrimaryDetails,tvPrimaryDetailsLbl" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvTerritoryLbl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/lbl_territory"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrierPrimary" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvTerritory"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:textSize="12sp"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvTerritoryLbl"
-                app:layout_constraintTop_toTopOf="@id/tvTerritoryLbl" />
-
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrierTerritory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="tvTerritoryLbl,tvTerritory" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvStateLbl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/lbl_state"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrierTerritory" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvState"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tvStateLbl"
-                app:layout_constraintTop_toTopOf="@id/tvStateLbl" />
-
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrierState"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="tvStateLbl,tvState" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvProductLbl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/lbl_products"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrierState" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvProduct"
-                app:layout_goneMarginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/tvProductLbl"
-                tools:listitem="@layout/item_order_product" />
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBusinessNameLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/lbl_business_name"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBusinessName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvBusinessNameLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvBusinessNameLbl" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrierBusiness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvBusinessName,tvBusinessNameLbl" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrimaryDetailsLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/lbl_primarydetails"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrierBusiness" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrimaryDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/tvPrimaryDetailsLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvPrimaryDetailsLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNameLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/lbl_name"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="@id/tvPrimaryDetailsLbl"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrimaryDetailsLbl" />
 
 
-    </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/tvNameLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvNameLbl" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrierName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvName,tvNameLbl" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMobileNumberLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/mobile_number"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="@id/tvNameLbl"
+                    app:layout_constraintTop_toBottomOf="@id/barrierName" />
+
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/tvMobileNumberLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvMobileNumberLbl" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrierMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvMobileNumber,tvMobileNumberLbl" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEmailLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="10dp"
+                    android:text="Email : "
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="@id/tvMobileNumberLbl"
+                    app:layout_constraintTop_toBottomOf="@id/barrierMobile" />
+
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/tvEmailLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvEmailLbl" />
+
+
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrierPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvEmailLbl,tvEmail" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTerritoryLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/lbl_territory"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrierPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTerritory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="12sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvTerritoryLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvTerritoryLbl" />
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrierTerritory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvTerritoryLbl,tvTerritory" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStateLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/lbl_state"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrierTerritory" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvState"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvStateLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvStateLbl" />
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrierState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvStateLbl,tvState" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProductLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/lbl_products"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrierState" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvProduct"
+                    app:layout_goneMarginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductLbl"
+                    tools:listitem="@layout/item_order_product" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

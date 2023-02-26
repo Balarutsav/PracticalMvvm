@@ -104,7 +104,11 @@ class OrderAdapter(val items: ArrayList<ListType>) :
             data.orderEntities.let {
                 binding.tvBusinessName.text = it.businessName
                 binding.tvState.text = it.state
-                binding.tvPrimaryDetails.text = it.primaryContactEmail
+                binding.tvEmail.text = it.primaryContactEmail
+                binding.tvName.text = it.primaryContactName
+                binding.tvMobileNumber.text = it.primaryContactMobile
+                binding.tvTerritory.text=it.territory
+
             }
             val adapter = ProductsAdapter(data.list)
             binding.rvProduct.adapter = adapter
